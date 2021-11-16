@@ -4,6 +4,9 @@ import java.util.Scanner;
 
 import mmms.member.action.Action;
 import mmms.member.action.MemberAddAction;
+import mmms.member.action.MemberListAction;
+import mmms.member.action.MemberModifyAction;
+import mmms.member.action.MemberRemoveAction;
 import mmms.member.controller.MemberController;
 
 public class MemberUI {
@@ -11,7 +14,7 @@ public class MemberUI {
 	public static void main(String[] args) {
 		
 		System.out.print("Pull 연습");
-		
+			
 		System.out.print("commit-push 연습1");
 		
 		System.out.print("slave branch 연습1");
@@ -33,18 +36,20 @@ public class MemberUI {
             case 1: 
             	action = new MemberAddAction();//1.회원등록
             	break;
-            	
-            	
-            	
-            	
-            	
-            	
-            	
-            	
-            	
-            	
-            	
-            default:
+            case 2: 
+            	action = new MemberListAction();//2.테이이블 전체 회원 보기
+            	break;
+            case 3: 
+            	action = new MemberModifyAction();//3.회원정보 수정
+            	break;
+            case 4: 
+            	action = new MemberRemoveAction();//4.회원삭제
+            	break;
+            case 5: 
+            	System.out.println("프로그램 종료!");;//5.종료
+            	isStop = true;
+            	break;
+            default: 
             	break;
             }
             
